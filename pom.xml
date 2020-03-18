@@ -138,29 +138,13 @@
         <no.commit.pattern>\bno(n|)commit\b</no.commit.pattern>
     </properties>
 
-    <repositories>
+    <distributionManagement>
         <repository>
-            <id>elasticsearch-releases</id>
-            <url>http://maven.elasticsearch.org/releases</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <id>ta-artifactory</id>
+            <name>TrueAccord Artifactory</name>
+            <url>https://artifactory.corp.trueaccord.com/artifactory/ext-release-local/</url>
         </repository>
-        <repository>
-            <id>oss-snapshots</id>
-            <name>Sonatype OSS Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-        <!--
-        <repository>
-            <id>Lucene snapshots</id>
-            <url>https://download.elasticsearch.org/lucenesnapshots/${lucene.snapshot.revision}</url>
-        </repository>
-        -->
-    </repositories>
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
@@ -562,6 +546,11 @@
                           </configuration>
                       </execution>
                   </executions>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-deploy-plugin</artifactId>
+                  <version>2.8.2</version>
               </plugin>
             </plugins>
         <pluginManagement>

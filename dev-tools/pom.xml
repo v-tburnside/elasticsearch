@@ -15,6 +15,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <elasticsearch.s3.repository>s3://download.elasticsearch.org/elasticsearch/staging/</elasticsearch.s3.repository>
   </properties>
+  <distributionManagement>
+    <repository>
+      <id>ta-artifactory</id>
+      <name>TrueAccord Artifactory</name>
+      <url>https://artifactory.corp.trueaccord.com/artifactory/ext-release-local/</url>
+    </repository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
